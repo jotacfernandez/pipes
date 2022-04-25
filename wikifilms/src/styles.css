@@ -1,1 +1,52 @@
-/* You can add global styles to this file, and also import other style files */
+/*Estilos generales de Wikifilms*/
+
+body {
+    background-color: #1D2227;
+}
+
+hr {
+    color: white;
+}
+
+p {
+    color: white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-weight: 200;
+    color: white;
+}
+
+
+/* Estilo para marca del navbar  */
+
+.navbar-brand {
+    font-weight: 200;
+    color: #bd4c5f !important;
+}
+
+
+/*Estilo para botones*/
+
+.btn-outline-success {
+    border-color: #bd4c5f !important;
+    ;
+    color: #bd4c5f !important;
+    ;
+}
+
+
+/*Estilo para el hover de botón*/
+
+.btn-outline-success:hover {
+    background-color: #272a36;
+    color: white !important;
+}
+
+.block {
+    display: block;
+}
