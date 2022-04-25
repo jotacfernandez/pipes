@@ -1,4 +1,4 @@
-export interface PosterResult {
+export interface PosterResultado {
     dates:         Dates;
     page:          number;
     results:       Film[];

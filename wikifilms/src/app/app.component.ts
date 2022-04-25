@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FilmsService } from './services/films.service';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'wikifilms';
+  constructor(private filmsService: FilmsService) {
+    this.filmsService.getPoster()
+      .subscribe(res => {
+        console.log(res);
+      })
+  }
 }
