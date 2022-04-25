@@ -1,9 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { LOCALE_ID } from '@angular/core';
-import '@angular/common/locales/global/es';
-
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -13,7 +10,7 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule
   ],
-  providers: [{ provide: LOCALE_ID, useValue: 'es' }],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
