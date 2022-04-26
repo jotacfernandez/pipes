@@ -8,7 +8,7 @@ import { Film } from 'src/app/interfaces/PosterResult';
 })
 export class SlideshowComponent implements OnInit {
 
-  //Para recibir datos del componente padre (home) tenemos que definirlo en inputs
+  //Para recibir datos del componente padre (home) a nuestro Slideshow tenemos que definirlo en inputs
   @Input() films: Film[]=[];
 
   constructor() { }
