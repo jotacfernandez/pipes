@@ -1,3 +1,4 @@
+//Con Postman obtenemos directamente las interfaces desde el Json de TMDB
 export interface PosterResultado {
     dates:         Dates;
     page:          number;

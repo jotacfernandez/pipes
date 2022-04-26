@@ -12,12 +12,14 @@ import { SlideshowComponent } from './slideshow/slideshow.component';
     SlideshowComponent
   ],
   //Exportación necesaria para poder importar este componente desde el resto de páginas que harán uso de esta barra
+  //Exportaremos aquellos que van a ser usados en las distintas paginas
   exports: [
-    NavbarComponent
+    NavbarComponent,
+    SlideshowComponent
   ],
   imports: [
     CommonModule,
-    RouterModule //importamos este módulo para poder hacer uso de routerlink en el componente navbar, entre otros
+    RouterModule, //importamos este módulo para poder hacer uso de routerlink en el componente navbar, entre otros
   ]
 })
 export class ComponentsModule { }

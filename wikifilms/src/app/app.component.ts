@@ -9,9 +9,6 @@ import { FilmsService } from './services/films.service';
 })
 export class AppComponent {
   constructor(private filmsService: FilmsService) {
-    this.filmsService.getPoster()
-      .subscribe(res => {
-        console.log(res);
-      })
+    
   }
 }

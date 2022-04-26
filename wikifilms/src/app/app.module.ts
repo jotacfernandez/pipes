@@ -6,6 +6,7 @@ import { ComponentsModule } from './components/components.module';
 
 import { AppComponent } from './app.component';
 import { ApproutesModule } from './approutes.module';
+import { PagesModule } from './pages/pages.module';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { ApproutesModule } from './approutes.module';
     BrowserModule,
     HttpClientModule,
     ApproutesModule,
-    ComponentsModule
+    ComponentsModule,
+    PagesModule
   ],
   
   providers: [],
