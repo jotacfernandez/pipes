@@ -28,7 +28,7 @@ export class SlideshowComponent implements OnInit, AfterViewInit{
   }
 
   ngOnInit(): void {
-    console.log(this.films);
+    //console.log(this.films);
   }
 
   //Funciones para Controles de navegación
