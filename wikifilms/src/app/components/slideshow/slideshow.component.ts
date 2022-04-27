@@ -12,13 +12,14 @@ export class SlideshowComponent implements OnInit, AfterViewInit{
   //Para recibir datos del componente padre (home) a nuestro Slideshow tenemos que definirlo en inputs
   @Input() films: Film[]=[];
   
+  public slideSwiper?: Swiper;
   constructor() { }
 
   //Inicializacion
   
 
   ngAfterViewInit(): void {
-    const slideSwiper = new Swiper('.swiper', {
+    this.slideSwiper = new Swiper('.swiper', {
       
       // Optional parameters
       loop: true,
@@ -26,10 +27,18 @@ export class SlideshowComponent implements OnInit, AfterViewInit{
       });
   }
 
-  
-  
-
   ngOnInit(): void {
     console.log(this.films);
   }
+
+  //Funciones para Controles de navegación
+
+  goSlidePrev(){
+    this.slideSwiper!.slidePrev();
+  }
+   
+  goSlideNext(){
+    this.slideSwiper!.slideNext();
+  }
+
 }
