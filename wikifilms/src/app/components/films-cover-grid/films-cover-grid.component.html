@@ -1,9 +1,3 @@
-<!-- <div class="row" *ngFor="let film of films">
-    <div class="col-md-3 mb-5">
-        <img src="https://image.tmdb.org/t/p/original{{film.backdrop_path}}" alt="">
-    </div>
-</div> -->
-
 <div class="row">
     <div class="col-md-3 mb-2" *ngFor="let film of films">
         <div class="card h-100">
@@ -12,7 +6,8 @@
                 <h5 class="card-title">{{ film.title }}</h5>
                 <div class="row text-white">
                     <div class="col-10">
-                        *******
+                        <star-rating [value]="film.vote_average" [totalstars]="10" checkedcolor="orange" uncheckedcolor="gray" size="18px" [readonly]="false">
+                        </star-rating>
                     </div>
                     <div class="col-2">
                         {{ film.vote_average }}

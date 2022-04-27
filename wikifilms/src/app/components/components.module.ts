@@ -4,6 +4,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { RouterModule } from '@angular/router';
 import { SlideshowComponent } from './slideshow/slideshow.component';
 import { FilmsCoverGridComponent } from './films-cover-grid/films-cover-grid.component';
+import { RatingModule } from 'ng-starrating';
 
 
 
@@ -23,6 +24,7 @@ import { FilmsCoverGridComponent } from './films-cover-grid/films-cover-grid.com
   imports: [
     CommonModule,
     RouterModule, //importamos este módulo para poder hacer uso de routerlink en el componente navbar, entre otros
+    RatingModule
   ]
 })
 export class ComponentsModule { }
