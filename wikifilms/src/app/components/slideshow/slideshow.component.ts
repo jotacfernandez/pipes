@@ -7,6 +7,7 @@ import Swiper, {Navigation} from 'swiper';
   templateUrl: './slideshow.component.html',
   styleUrls: ['./slideshow.component.css']
 })
+
 export class SlideshowComponent implements OnInit, AfterViewInit{
 
   //Para recibir datos del componente padre (home) a nuestro Slideshow tenemos que definirlo en inputs

@@ -1,4 +1,5 @@
 <h2><small>Wikifilms</small> Recomienda</h2>
+<!-- /*Nos aseguramos con la siguiente estructura *ngIf que no se crea el componente si no obtenemos al menos una película */ -->
 
 <div class="row" *ngIf="films.length > 0">
     <div class="col">
@@ -8,4 +9,8 @@
 <br>
 <h2>Títulos</h2>
 
-<app-films-cover-grid></app-films-cover-grid>
+<div class="row" *ngIf="films.length > 0">
+    <div class="col">
+        <app-films-cover-grid [films]="films"></app-films-cover-grid>
+    </div>
+</div>
