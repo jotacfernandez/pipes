@@ -3,19 +3,22 @@ import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RouterModule } from '@angular/router';
 import { SlideshowComponent } from './slideshow/slideshow.component';
+import { FilmsCoverGridComponent } from './films-cover-grid/films-cover-grid.component';
 
 
 
 @NgModule({
   declarations: [
     NavbarComponent,
-    SlideshowComponent
+    SlideshowComponent,
+    FilmsCoverGridComponent
   ],
   //Exportación necesaria para poder importar este componente desde el resto de páginas que harán uso de esta barra
   //Exportaremos aquellos que van a ser usados en las distintas paginas
   exports: [
     NavbarComponent,
-    SlideshowComponent
+    SlideshowComponent,
+    FilmsCoverGridComponent
   ],
   imports: [
     CommonModule,

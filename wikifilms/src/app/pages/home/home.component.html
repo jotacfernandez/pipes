@@ -1,7 +1,11 @@
-<p>home works!</p>
+<h2><small>Wikifilms</small> Recomienda</h2>
 
 <div class="row" *ngIf="films.length > 0">
     <div class="col">
         <app-slideshow [films]="films"></app-slideshow>
     </div>
 </div>
+<br>
+<h2>Títulos</h2>
+
+<app-films-cover-grid></app-films-cover-grid>
