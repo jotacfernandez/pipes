@@ -21,6 +21,9 @@ export class HomeComponent implements OnInit {
     const max_scroll = document.documentElement.scrollHeight;
     
     if (posicion_scroll+990 >= max_scroll) {
+      if (!this.filmsService.loaded){
+        return;
+      }
       //console.log('pagina Superada')
       this.filmsService.getPoster().subscribe( res => {
         //Con push iremos añadiendo cada nueva página de resultados para que se vaya mostrando de manera "infinita"
