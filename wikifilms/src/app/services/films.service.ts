@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, tap } from 'rxjs';
-import { PosterResultado } from '../interfaces/PosterResult';
+import { Observable, of } from 'rxjs';
+import { catchError, tap, map } from 'rxjs/operators';
+import { Film, PosterResultado } from '../interfaces/PosterResult';
   
 
 
@@ -49,6 +50,17 @@ export class FilmsService {
         //Significará que ya está cargada
         this.loaded = true;
       })
-    )
+    );
+  }
+
+  //Esta función será llamada desde el componente search
+  //Get del search de la API:
+  //https://api.themoviedb.org/3/search/movie?api_key=99cd84992241f8b27486288ae4bfe53c&language=es-ES&query=vengadores&page=1&include_adult=true
+  searchFilms(texto: string):Observable<Film[]>{
+    //Desestructuramos para hacer algunos cambio nacesarios (page y query)
+    const params = {...this.params, page:'1', query: texto};
+
+    return this.http.get<PosterResultado>(`${this.baseUrl}/search/movie`, {
+      params: this.params}).pipe(map(res => res.results))
   }
 }

@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
   onscroll(){
     const posicion_scroll = document.documentElement.scrollTop;
     const max_scroll = document.documentElement.scrollHeight;
-    
+    //Debido al scroll hay un diferencia entre ambas variales que compensaremos en la condición, sumándola a la posición actual
     if (posicion_scroll+990 >= max_scroll) {
       if (!this.filmsService.loaded){
         return;
