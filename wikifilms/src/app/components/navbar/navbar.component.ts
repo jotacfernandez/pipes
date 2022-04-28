@@ -12,4 +12,8 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  searchTitle(txtform: string){
+    console.log(txtform);
+  }
+
 }
