@@ -43,7 +43,7 @@ export class HomeComponent implements OnInit, OnDestroy {
        this.filmsCarousel = res.results;
       })
   }
-
+  //Con esto evitaremos que al resgresar a la home el carrusel muestre una película dirente a las de la primera página
   ngOnDestroy(): void {
     this.filmsService.resetPosterPage();
   }

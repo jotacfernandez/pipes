@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { catchError, tap, map } from 'rxjs/operators';
+import { FilminfoResultado } from '../interfaces/filminfoResult';
 import { Film, PosterResultado } from '../interfaces/PosterResult';
   
 
@@ -57,8 +58,9 @@ export class FilmsService {
   }
 
   //Esta función será llamada desde el componente search
-  //Get del search de la API:
+  //Url de ejemplo para el Get del search Movies de la API:
   //https://api.themoviedb.org/3/search/movie?api_key=99cd84992241f8b27486288ae4bfe53c&language=es-ES&query=vengadores&page=1&include_adult=true
+  //Esta función devolverá la url correspondiente que será el parámetro del Get en la pagina search
   searchFilms(texto: string):Observable<Film[]>{
     //Desestructuramos para hacer algunos cambio nacesarios (page y query)
     const params = {...this.params, page:'1', query: texto};
@@ -66,4 +68,16 @@ export class FilmsService {
     return this.http.get<PosterResultado>(`${this.baseUrl}/search/movie`, {
       params: this.params}).pipe(map(res => res.results))
   }
+  
+  //Esta función será llamada desde el componente filminfo
+  //Url ejemplo para el Get details de la API:
+  //https://api.themoviedb.org/3/movie/335787?api_key=99cd84992241f8b27486288ae4bfe53c&language=es-ES
+  //Como en los casos anteriores, utilizaremos una función que nos devolverá la url necesaria para
+  //Dicha url será el parámetro del Get con el que obtendremos,  en la página filminfo, los datos de la pelicula clicada (según su id) 
+
+  getFilminfo(id: string) {
+    return this.http.get<FilminfoResultado>(`${this.baseUrl}/movie/${id}`,{
+      params:this.params});
+  }
+
 }

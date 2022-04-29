@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
+  //Necesitamos declarar un Router para navegar hasta la pagina search
   constructor( private router: Router) { }
 
   ngOnInit(): void {
