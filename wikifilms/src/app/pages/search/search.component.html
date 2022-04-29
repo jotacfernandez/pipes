@@ -1,1 +1,17 @@
-<p>search works!</p>
+<h4><small>Búsqueda de </small>'{{ texto }}'</h4>
+
+<!-- /*Nos aseguramos con la siguiente estructura *ngIf que no se crea el componente si no obtenemos al menos una película */ -->
+
+<div class="row">
+    <div class="col">
+        <app-films-cover-grid [films]="films"></app-films-cover-grid>
+    </div>
+</div>
+
+<!-- <h2>Títulos</h2>
+
+<div class="row" *ngIf="films.length > 0">
+    <div class="col">
+        <app-films-cover-grid [films]="films"></app-films-cover-grid>
+    </div>
+</div> -->

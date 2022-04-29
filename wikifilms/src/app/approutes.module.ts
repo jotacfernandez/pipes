@@ -19,7 +19,7 @@ const rutas_arr: Routes = [
   },
 
   {
-    path: 'search/:txtbusqueda',
+    path: 'search/:texto',
     component: SearchComponent
   },
   //En caso de no identificar la página objetivo, volverá al home

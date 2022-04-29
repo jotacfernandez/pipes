@@ -24,7 +24,7 @@ import { RatingModule } from 'ng-starrating';
   imports: [
     CommonModule,
     RouterModule, //importamos este módulo para poder hacer uso de routerlink en el componente navbar, entre otros
-    RatingModule
+    RatingModule,
   ]
 })
 export class ComponentsModule { }

@@ -22,6 +22,9 @@ export class FilmsService {
 
   constructor( private http: HttpClient) { }
 
+  resetPosterPage(){
+    this.pagina = 1;
+  }
   //Esta función get retornará el sufijo de la Url de consulta de la API
   //Con ello conseguimos simplificar el código así com acceder a la página para incrementarla
   get params(){
@@ -59,7 +62,7 @@ export class FilmsService {
   searchFilms(texto: string):Observable<Film[]>{
     //Desestructuramos para hacer algunos cambio nacesarios (page y query)
     const params = {...this.params, page:'1', query: texto};
-
+    console.log("params en services ", params);
     return this.http.get<PosterResultado>(`${this.baseUrl}/search/movie`, {
       params: this.params}).pipe(map(res => res.results))
   }

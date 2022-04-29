@@ -13,16 +13,19 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  searchTitle(txtbusqueda: string){
-    console.log(txtbusqueda);
-    //Comprobamos si la cadena está o no vacía. //
+  searchTitle(texto: string){
+    console.log("Texto en navbar component: ",texto);
+    //Eliminamos los espacios en blanco introducidos con trim
+    texto = texto.trim();
+   //Comprobamos si la cadena está o no vacía. //
     //Si no lo está navegará a la sección de resultados de búsqueda
-    if (txtbusqueda = ""){
+    if ( texto.length === 0 ) {
       return;
-    }else {
-      //Navegamos a la pagina donde se mostraran los resultados de la búsqueda 
-      this.router.navigate(['/search', txtbusqueda]);
     }
+ 
+    console.log('buscarPelicula 1:' +texto);
+ 
+    this.router.navigate(['/search', texto]);
  }
 
 }
