@@ -4,9 +4,6 @@ import { FilmsService } from 'src/app/services/films.service';
 import { Film } from 'src/app/interfaces/PosterResult';
 
 
-
-
-
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',

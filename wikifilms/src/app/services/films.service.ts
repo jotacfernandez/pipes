@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { catchError, tap, map } from 'rxjs/operators';
+import { CastingResultado } from '../interfaces/CastResult';
 import { FilminfoResultado } from '../interfaces/filminfoResult';
 import { Film, PosterResultado } from '../interfaces/PosterResult';
   
@@ -77,6 +78,13 @@ export class FilmsService {
 
   getFilminfo(id: string) {
     return this.http.get<FilminfoResultado>(`${this.baseUrl}/movie/${id}`,{
+      params:this.params});
+  }
+
+  //Url ejemplo para el Get credits de la API:
+  //https://api.themoviedb.org/3/movie/414906/credits?api_key=99cd84992241f8b27486288ae4bfe53c&language=es-ES
+  getCastinfo(id: string){
+    return this.http.get<CastingResultado>(`${this.baseUrl}/movie/${id}/credits`,{
       params:this.params});
   }
 

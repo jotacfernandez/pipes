@@ -1,1 +1,26 @@
-<p>filminfo works!</p>
+<!-- Nos aseguramos de que la pelicula no está vacía -->
+<div class="container">
+    <div class="row" *ngIf="filminfo">
+        <div class="col-md-4">
+            <img class="img-fluid card-img-top rounded float-start" src="https://image.tmdb.org/t/p/original{{filminfo.poster_path}}" onerror="this.src='../../../assets/imagen-no-disponible.png';">
+        </div>
+        <div class="col-md-8">
+            <h1>{{filminfo.title}} <small> ({{filminfo.release_date | date:'yyyy'}})</small></h1>
+            <p>Idioma: <strong>{{filminfo.original_language | uppercase }}</strong> • Duración: <strong>{{ filminfo.runtime}} mins.</strong></p>
+            <div class="row text-white">
+                <star-rating [value]="filminfo.vote_average" [totalstars]="10" checkedcolor="orange" uncheckedcolor="gray" size="28px" [readonly]="false">
+                </star-rating>
+                <div class="vote">
+                    <h3><small>Valoración: </small><strong>{{ filminfo.vote_average }}</strong></h3>
+                </div>
+            </div>
+            <hr>
+            <h5 class="tagline">{{filminfo.tagline}}</h5>
+            <h2>Sinopsis</h2>
+            <p class="sinopsis">{{filminfo.overview}}</p>
+            <div class="row">
+                <a href="#" class="btn btn-outline-info" role="button" data-bs-toggle="button">Volver</a>
+            </div>
+        </div>
+    </div>
+</div>
