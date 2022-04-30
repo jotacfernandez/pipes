@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Cast, CastingResultado } from 'src/app/interfaces/CastResult';
 import { FilminfoResultado } from 'src/app/interfaces/filminfoResult';
 import { FilmsService } from 'src/app/services/films.service';
+import {  } from 'src/app/interfaces/filminfoResult';
 
 
 @Component({
@@ -15,7 +16,8 @@ export class FilminfoComponent implements OnInit {
   //Para poder obtener los datos en el html de este componente crearemos estas variable publica
   public filminfo!: FilminfoResultado;//Detalles de la pelicula
   public castinfo!: Cast[]; //Datos del casting
-  public crewinfo!: Cast[]; //Datos del equipo: director, etc
+  public crewinfo!: Cast[]; //Datos del equipo: Director, realizador, etc
+  
   
 
   constructor(private activatedRoute: ActivatedRoute,
@@ -24,6 +26,7 @@ export class FilminfoComponent implements OnInit {
   ngOnInit(): void {
     
     const id = this.activatedRoute.snapshot.params['id'];
+
     this.filmsService.getFilminfo(id).subscribe( film => {
       //console.log(film);
       this.filminfo = film;
@@ -32,7 +35,10 @@ export class FilminfoComponent implements OnInit {
 
     this.filmsService.getCastinfo(id).subscribe( cast => {
       console.log(cast);
-      this.castinfo = cast;
-    })
+    });
+
+    this.filmsService.getCrewinfo(id).subscribe( crew => {
+      console.log(crew);
+    });
   }
 }
