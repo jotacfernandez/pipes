@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Cast, CastingResultado } from 'src/app/interfaces/CastResult';
 import { FilminfoResultado } from 'src/app/interfaces/filminfoResult';
 import { FilmsService } from 'src/app/services/films.service';
@@ -21,7 +21,8 @@ export class FilminfoComponent implements OnInit {
   
 
   constructor(private activatedRoute: ActivatedRoute,
-    private filmsService: FilmsService) { }
+    private filmsService: FilmsService,
+    private router: Router) { }
 
   ngOnInit(): void {
     
@@ -29,7 +30,10 @@ export class FilminfoComponent implements OnInit {
 
     this.filmsService.getFilminfo(id).subscribe( film => {
       //console.log(film);
-      this.filminfo = film;
+      (film && film.id === +id) 
+      ? (this.filminfo = film)
+      : this.router.navigateByUrl('/home');
+      
     });
     console.log(id);
 
