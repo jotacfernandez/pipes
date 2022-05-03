@@ -1,6 +1,6 @@
 <!-- Nos aseguramos de que la pelicula no está vacía -->
 <div class="container">
-    <div class="row" *ngIf="filminfo">
+    <div class="row margen_nav" *ngIf="filminfo">
         <div class="col-md-4">
             <img class="img-fluid card-img-top rounded float-start" src="https://image.tmdb.org/t/p/original{{filminfo.poster_path}}" onerror="this.src='../../../assets/imagen-no-disponible.png';">
         </div>
@@ -11,31 +11,41 @@
                 <star-rating [value]="filminfo.vote_average" [totalstars]="10" checkedcolor="orange" uncheckedcolor="gray" size="28px" [readonly]="false">
                 </star-rating>
                 <div class="vote">
-                    <h3><small>Valoración: </small><strong>{{ filminfo.vote_average }}</strong></h3>
+                    <h2><small>Valoración: </small><strong>{{ filminfo.vote_average }}</strong></h2>
                 </div>
             </div>
             <hr>
             <h5 class="tagline">{{filminfo.tagline}}</h5>
             <h2>Sinopsis</h2>
             <p class="sinopsis">{{filminfo.overview}}</p>
-
         </div>
     </div>
 
     <div class="row mt-3 mb-3">
         <a href="#" class="btn btn-outline-info" role="button" data-bs-toggle="button">Volver</a>
     </div>
+
+    <div class="row">
+        <h3>DIRECCIÓN</h3>
+    </div>
+    <div *ngFor="let role of crewinfo ">
+        <div *ngIf='role.job == "Director"' style="width: 18rem;">
+            <img class="rounded" src="https://image.tmdb.org/t/p/w500{{role.profile_path}} " class="card-img-top" onerror="this.src='../../../assets/imagen-no-disponible.png'; " [alt]="role.name ">
+            <h5 class="card-title ">{{ role.name }}</h5>
+        </div>
+    </div>
+
     <h3>REPARTO</h3>
-    <div class="row mt-3">
-        <div class="col-md-3 mb-2" *ngFor="let actor of castinfo text-white ">
+    <div class="row mt-3 ">
+        <div class="col-md-3 mb-2 " *ngFor="let actor of castinfo text-white ">
             <div>
-                <img class="img-thumbnail" src="https://image.tmdb.org/t/p/w500{{actor.profile_path}} " onerror="this.src='../../../assets/imagen-no-disponible.png';" [alt]="actor.name">
-                <h5 class="card-title">{{ actor.name }}</h5>
+                <img class="img-thumbnail " src="https://image.tmdb.org/t/p/w500{{actor.profile_path}} " onerror="this.src='../../../assets/imagen-no-disponible.png' ; " [alt]="actor.name ">
+                <h5 class="card-title ">{{ actor.name }}</h5>
             </div>
         </div>
     </div>
 
-    <div class="row mb-3">
-        <a href="#" class="btn btn-outline-info" role="button" data-bs-toggle="button">Volver</a>
+    <div class="row mb-3 ">
+        <a href="# " class="btn btn-outline-info " role="button " data-bs-toggle="button ">Volver</a>
     </div>
 </div>
