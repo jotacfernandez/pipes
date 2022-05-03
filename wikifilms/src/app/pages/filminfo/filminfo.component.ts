@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Cast, CastingResultado } from 'src/app/interfaces/CastResult';
-import { FilminfoResultado } from 'src/app/interfaces/filminfoResult';
+import { FilminfoResultado } from 'src/app/interfaces/FilminfoResult';
 import { FilmsService } from 'src/app/services/films.service';
-import {  } from 'src/app/interfaces/filminfoResult';
+
 
 
 @Component({
@@ -15,7 +15,7 @@ export class FilminfoComponent implements OnInit {
   
   //Para poder obtener los datos en el html de este componente crearemos estas variable publica
   public filminfo!: FilminfoResultado;//Detalles de la pelicula
-  public castinfo!: Cast[]; //Datos del casting
+  public cast!: Cast[]; //Datos del casting
   public crewinfo!: Cast[]; //Datos del equipo: Director, realizador, etc
   
   

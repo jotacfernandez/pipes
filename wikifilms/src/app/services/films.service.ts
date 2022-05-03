@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { catchError, tap, map } from 'rxjs/operators';
 import { CastingResultado } from '../interfaces/CastResult';
-import { FilminfoResultado } from '../interfaces/filminfoResult';
+import { FilminfoResultado } from '../interfaces/FilminfoResult';
 import { Film, PosterResultado } from '../interfaces/PosterResult';
   
 
@@ -67,7 +67,7 @@ export class FilmsService {
     const params = {...this.params, page:'1', query: texto};
     console.log("params en services ", params);
     return this.http.get<PosterResultado>(`${this.baseUrl}/search/movie`, {
-      params: this.params}).pipe(map(res => res.results))
+      params}).pipe(map(res => res.results))
   }
   
   //Esta función será llamada desde el componente filminfo
