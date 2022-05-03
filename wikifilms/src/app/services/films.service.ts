@@ -88,7 +88,7 @@ export class FilmsService {
       params:this.params}).pipe(map(res => res.cast),
       catchError(err => of([])))
   }
-
+  //Funcion para extraer datos del equipo
   //Creamos esta función independiente para obtener datos del crew de la pelicula: director, etc
   getCrewinfo(id: string){
     return this.http.get<CastingResultado>(`${this.baseUrl}/movie/${id}/credits`,{
