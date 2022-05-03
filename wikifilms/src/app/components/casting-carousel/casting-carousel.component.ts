@@ -9,11 +9,12 @@ import Swiper from 'swiper';
 })
 export class CastingCarouselComponent implements OnInit, AfterViewInit {
   
-  @Input() cast: Cast[] = [];
+  @Input() cast: Cast[];
+  //public mySwiper!: Swiper;
   constructor() { }
 
   ngOnInit(): void {
-    console.log("El cast:", this.cast);
+    console.log("Casting en Cast-slideshow (casting-Carousel)", this.cast);
   }
 
   ngAfterViewInit(): void {

@@ -18,15 +18,24 @@
             <h5 class="tagline">{{filminfo.tagline}}</h5>
             <h2>Sinopsis</h2>
             <p class="sinopsis">{{filminfo.overview}}</p>
-            <div class="row">
-                <a href="#" class="btn btn-outline-info" role="button" data-bs-toggle="button">Volver</a>
+
+        </div>
+    </div>
+
+    <div class="row mt-3 mb-3">
+        <a href="#" class="btn btn-outline-info" role="button" data-bs-toggle="button">Volver</a>
+    </div>
+    <h3>REPARTO</h3>
+    <div class="row mt-3">
+        <div class="col-md-3 mb-2" *ngFor="let actor of castinfo text-white ">
+            <div>
+                <img class="img-thumbnail" src="https://image.tmdb.org/t/p/w500{{actor.profile_path}} " onerror="this.src='../../../assets/imagen-no-disponible.png';" [alt]="actor.name">
+                <h5 class="card-title">{{ actor.name }}</h5>
             </div>
         </div>
     </div>
-    <br><br>
-    <div class="row">
-        <div class="col">
-            <app-casting-carousel [cast]="cast"></app-casting-carousel>
-        </div>
+
+    <div class="row mb-3">
+        <a href="#" class="btn btn-outline-info" role="button" data-bs-toggle="button">Volver</a>
     </div>
 </div>

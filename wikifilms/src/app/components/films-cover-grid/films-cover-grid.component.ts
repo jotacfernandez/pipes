@@ -22,7 +22,7 @@ export class FilmsCoverGridComponent implements OnInit {
   }
 
   onFilmClick(film: Film){
-    console.log(film);
+    //console.log(film);
     this.router.navigate(['/filminfo', film.id]);
   }
 

@@ -78,7 +78,7 @@ export class FilmsService {
 
   getFilminfo(id: string) {
     return this.http.get<FilminfoResultado>(`${this.baseUrl}/movie/${id}`,{
-      params:this.params}).pipe(catchError(err => of()));
+      params: this.params}).pipe(catchError(err => of(null)));
   }
 
   //Url ejemplo para el Get credits de la API:

@@ -15,8 +15,8 @@ export class FilminfoComponent implements OnInit {
   
   //Para poder obtener los datos en el html de este componente crearemos estas variable publica
   public filminfo!: FilminfoResultado;//Detalles de la pelicula
-  public cast!: Cast[]; //Datos del casting
-  public crewinfo!: Cast[]; //Datos del equipo: Director, realizador, etc
+  public castinfo: Cast[] = []; //Datos del casting
+  public crewinfo: Cast[] = []; //Datos del equipo: Director, realizador, etc
   
   
 
@@ -35,14 +35,16 @@ export class FilminfoComponent implements OnInit {
       : this.router.navigateByUrl('/home');
       
     });
-    console.log(id);
+    //console.log(id);
 
     this.filmsService.getCastinfo(id).subscribe( cast => {
-      console.log(cast);
+      console.log("Casting en Pelicula(filminfo)", cast);
+      this.castinfo = cast;
     });
 
     this.filmsService.getCrewinfo(id).subscribe( crew => {
-      console.log(crew);
+      console.log("Crew en Pelicula(filminfo)",crew);
+      this.crewinfo = crew;
     });
   }
 }
