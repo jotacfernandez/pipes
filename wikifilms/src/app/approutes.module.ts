@@ -35,7 +35,7 @@ const rutas_arr: Routes = [
   declarations: [],
   imports: [
     CommonModule,
-    RouterModule.forRoot(rutas_arr)
+    RouterModule.forRoot(rutas_arr, {useHash: true} )
   ],
   exports:[
     RouterModule

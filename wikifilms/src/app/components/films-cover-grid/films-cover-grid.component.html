@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-md-3 mb-2" *ngFor="let film of films">
         <div class="card h-100">
-            <img class="img-fluid card-img-top" src="https://image.tmdb.org/t/p/w500{{film.poster_path}} " onerror="this.src='../../../assets/imagen-no-disponible.png';" alt="imagen no disponible" (click)="onFilmClick(film)">
+            <img class="img-fluid card-img-top" src="https://image.tmdb.org/t/p/w500{{film.poster_path}} " onerror="this.src='./assets/imagen-no-disponible.png';" alt="imagen no disponible" (click)="onFilmClick(film)">
             <!-- <img class="img-fluid card-img-top" *ngIf="film.poster_path == null" src="../../../assets/imagen-no-disponible.png" alt="... "> -->
             <div class="card-body">
                 <h5 class="card-title">{{ film.title }}</h5>
